@@ -7,6 +7,10 @@ a {
 	color: #00B7FF;
 }
 
+h4 {
+	color: grey;
+}
+
 .player {
 	max-width: 750px;
 	border: 5px solid rgba(0,0,0,0.2);
@@ -15,6 +19,12 @@ a {
 	font-size: 0;
 	overflow: hidden;
 }
+
+/* override sidebar-nav .container-fluid css*/
+.container-fluid { 
+	padding-top: 3%;
+}
+
 /* This css is only applied when fullscreen is active. */
 .player:fullscreen {
 	max-width: none;
