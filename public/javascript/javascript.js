@@ -1,5 +1,5 @@
 window.onload = function() {
-	const videoList = document.querySelector('.video-list');
+	const videoList = document.querySelector('.sidebar-nav');
 	const player = document.querySelector('.player');
 	const video = player.querySelector('.viewer');
 	const progress = player.querySelector('.progress');
@@ -21,9 +21,19 @@ window.onload = function() {
 				console.log(dataSrc);
 				dataSrc.forEach(src => {
 					console.log(src);
-					var p = document.createElement('p');
-					p.innerHTML = `${src}`;
-					videoList.appendChild(p);
+					// create li
+					var videoListItems = document.createElement('li');
+					// create a 
+					var videoListItemsA = document.createElement('a');
+					// set content to src
+					videoListItemsA.innerHTML = `${src}`;
+					// set a href to #
+					videoListItemsA.href = '#'
+					// append a to li
+					videoListItems.appendChild(videoListItemsA)
+					// append items to list
+					videoList.appendChild(videoListItems);
+					// set video source to src
 					video.src = src;
 				});
 			});
