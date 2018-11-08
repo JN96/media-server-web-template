@@ -11,6 +11,10 @@ h4 {
 	color: grey;
 }
 
+.oneline{
+    white-space:nowrap;
+}
+
 .player {
 	max-width: 750px;
 	border: 5px solid rgba(0,0,0,0.2);
