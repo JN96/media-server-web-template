@@ -1,6 +1,7 @@
 window.onload = function() {
-	const videoList = document.querySelector('.sidebar-nav');
+	const mediaList = document.querySelector('.media-list');
 	const video = document.querySelector('.viewer');
+	const nowPlaying = document.querySelector('.now-playing');
 
 	fetch('/data')
 	.then(
@@ -15,22 +16,20 @@ window.onload = function() {
 				console.log(dataSrc);
 				dataSrc.forEach(src => {
 					console.log(src);
-					// create li
-					var videoListItems = document.createElement('li');
-					// add class .video-list-item to each li
-					videoListItems.classList.add('.video-list-item');
-					// create a 
-					var videoListItemsA = document.createElement('a');
-					// set content to src
-					videoListItemsA.innerHTML = `${src}`;
-					// set a href to #
-					videoListItemsA.href = `${src}`;
-					// append a to li
-					videoListItems.appendChild(videoListItemsA)
-					// append items to list
-					videoList.appendChild(videoListItems);
-					// set video source to src
-					video.src = src;
+					// create li tag and attributes
+					var mediaListItem = document.createElement('li');
+
+					// creat a tag and attributes
+					var mediaListItemLink = document.createElement('a')
+					mediaListItemLink.innerHTML = `${src}`;
+					mediaListItemLink.href = `${src}`;
+
+					mediaListItem.append(mediaListItemLink);
+					mediaList.append(mediaListItem);
+
+					// src set to prevent mime type error on page load. 
+					// gets set to last src from dataSrc.
+					video.src = `${src}`;
 				});
 			});
 		}
@@ -44,10 +43,14 @@ window.onload = function() {
     	// e.stopPropagation(); // stop bubbling!
     	e.preventDefault();
     	console.log(this.textContent, this.href);
+    	nowPlaying.innerHTML = "Now playing: " + this.href.split('/').pop();
     	video.src = this.href;
     }
 
     $(document).on('click','li a', displayPlayer);
+
+    $('#sidebarCollapse').on('click', function () {
+    	$('#sidebar').toggleClass('active');
+    	$(this).toggleClass('active');
+    });
 } // end document ready
-
-
