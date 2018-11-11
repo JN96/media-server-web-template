@@ -11,8 +11,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/data', function(req, res, next){
-	FileLocator.fetchVideos().then(data => {
-		res.send(data);
+	FileLocator.fetchVideos(path.resolve(__dirname, '../public'),function(err,videos){
+		var video_list = [];
+		videos.forEach(obj => {
+			video_list.push(path.basename(obj));
+		});
+		res.send(video_list);
 	});
 });
 
