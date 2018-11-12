@@ -1,46 +1,66 @@
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
+	<link rel="icon" href="favicon.ico">
+
 	<title>media-server-web-template</title>
-	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
+
+	<!-- Bootstrap core CSS -->
+	<link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Custom styles for this template -->
+	<link href="stylesheets/style.css" rel="stylesheet">
 </head>
 <body>
-	<div class="wrapper">
-		<!-- Sidebar Holder -->
-		<nav id="sidebar">
-			<div class="sidebar-header">
-				<h3>media-server-web-template</h3>
-			</div>
-			<ul class="list-unstyled components media-list">
-				<p>Media List</p>
-			</ul>
-		</nav>
-		<!-- Page Content Holder -->
-		<div id="content">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<div class="container-fluid">
-					<button type="button" id="sidebarCollapse" class="navbar-btn">
-						<span></span>
-						<span></span>
-						<span></span>
-					</button>
-					<div class="now-playing"></div>
+	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">mswt</a>
+		<ul class="navbar-nav px-3">
+			<li class="nav-item text-nowrap">
+				<div class="now-playing nav-link"></div>
+			</li>
+		</ul>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column media-list">
+						<li class="text-truncate">
+							<form class="input-group">
+								<input class="form-control search" name="search" placeholder="Search Here" autocomplete="off" autofocus="autofocus" type="text">
+								<div class="input-group-btn">
+									<button class="btn btn-outline-success" type="submit">Search</button>
+								</div>
+							</form>
+						</li>  
+						<li class="nav-item">
+							<a class="nav-link active">
+								Media List <span class="sr-only">(current)</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</nav>
-			<main class="col">
-				<video class="viewer" controls>
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+				<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+					<div class="btn-toolbar mb-2 mb-md-0">
+						<div class="btn-group mr-2">
+							
+
+						</div>
+					</div>
+				</div>
+				<video class="viewer my-4 w-100" controls>
 					<source src="">
 					</video>
 				</main>
-			<div class="line"></div>
+			</div>
 		</div>
-	</div>
-	<script type="text/javascript" src="/javascript/jquery-3.3.1.slim.min.js"></script>
-	<script type="text/javascript" src="/javascript/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/javascript/javascript.js"></script>
-</body>
-</html>
+		<script type="text/javascript" src="/javascript/jquery-3.3.1.slim.min.js"></script>
+		<script type="text/javascript" src="javascript/javascript.js"></script>
+	</body>
+	</html>

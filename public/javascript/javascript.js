@@ -18,9 +18,12 @@ window.onload = function() {
 					console.log(src);
 					// create li tag and attributes
 					var mediaListItem = document.createElement('li');
+					mediaListItem.classList.add('nav-item');
 
 					// creat a tag and attributes
 					var mediaListItemLink = document.createElement('a')
+					mediaListItemLink.classList.add('nav-link');
+					mediaListItemLink.classList.add('text-white');
 					mediaListItemLink.innerHTML = `${src}`;
 					mediaListItemLink.href = `${src}`;
 
@@ -48,9 +51,4 @@ window.onload = function() {
     }
 
     $(document).on('click','li a', displayPlayer);
-
-    $('#sidebarCollapse').on('click', function () {
-    	$('#sidebar').toggleClass('active');
-    	$(this).toggleClass('active');
-    });
 } // end document ready
